@@ -4,27 +4,27 @@ import { ref } from 'vue'
 const tags = ref([
     {
         id: 1,
-        name: 'Сайты'
+        categories: 'Сайты'
     },
     {
         id: 2,
-        name: 'Верстка'
+        categories: 'Верстка'
     },
     {
         id: 3,
-        name: 'Тильда'
+        categories: 'Тильда'
     },
     {
         id: 4,
-        name: 'Очень большой текст'
+        categories: 'Очень большой текст'
     },
     {
         id: 5,
-        name: 'Веб разработка'
+        categories: 'Веб разработка'
     },
     {
         id: 6,
-        name: '123'
+        categories: '123'
     },
 ])
 </script>
@@ -37,8 +37,11 @@ const tags = ref([
         <input class="search__input" type="text">
     </div>
     <div class="filters__tags">
+        <a href="#!" class="tags__all">Все
+            <img class="tags__all--img" src="@/assets/img/close.png">
+        </a>
         <div class="tag" v-for="tag in tags">
-            <p class="tag__text"> {{ tag.name }}</p>
+            <a href="#!" class="tag__text"> {{ tag.categories }}</a>
         </div>
     </div>
 </div>
