@@ -1,6 +1,8 @@
 <script setup>
 import { ref } from 'vue'
 import './style.scss'
+import { useCategoryStore } from '@/store/activeTags'
+const tags = useCategoryStore().category
 const boardItems = ref([
     {
         avatar: 'src/assets/img/avatar-1.png',
@@ -48,6 +50,7 @@ const boardItems = ref([
         category: ['Веб разработка']
     },
 ])
+
 </script>
 <template>
     <div class="board">

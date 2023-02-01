@@ -17,29 +17,23 @@
             background: #333333;
             width: 100%;
             border: none;
-            border-radius: 15px;
+            // border-radius: 15px;
         }
     }
     &__tags {
         margin: 30px 0;
+        // padding: 1px;
         .tags__all {
             display: inline-flex;
             align-items: center;
             column-gap: 5px;
             padding: 3px 6px;
             margin-right: 10px;
-            color: #000;
+            color: #fff;
             border: solid 1px #333333;
             border-radius: 25px;
-            background: #fff;
             font-size: 18px;
             text-decoration: none;
-            &--img {
-                border-radius: 25px;
-                width: 24px;
-                height: 24px;
-                cursor: pointer;
-            }
         }
         .tag {
             display: inline-flex;
@@ -49,12 +43,14 @@
             border: solid 1px #333333;
             border-radius: 25px;
             cursor: pointer;
-            &__text {
-                margin: 1px;
-                font-size: 18px;
-                text-decoration: none;
-                color: #fff;
-            }
+            text-decoration: none;
+            color: #fff;
         }
     }
+}
+.active {
+    background: url('@/assets/img/close.png') no-repeat center right, #fff no-repeat;
+    background-size: 26px 26px;
+    padding-right: 25px !important;
+    color: #000 !important;
 }

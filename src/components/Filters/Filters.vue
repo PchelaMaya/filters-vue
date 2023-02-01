@@ -1,6 +1,7 @@
 <script setup>
 import './style.scss'
 import { ref } from 'vue'
+import { useCategoryStore } from '@/store/activeTags'
 const tags = ref([
     {
         id: 1,
@@ -27,6 +28,9 @@ const tags = ref([
         categories: '123'
     },
 ])
+const storeCategory = useCategoryStore();
+const isActivedTagsFilter = ref(false);
+function isActivedFilter() { isActivedTagsFilter.value = !isActivedTagsFilter.value }
 </script>
 <template>
 <div class="filters">
@@ -37,12 +41,11 @@ const tags = ref([
         <input class="search__input" type="text">
     </div>
     <div class="filters__tags">
-        <a href="#!" class="tags__all">Все
-            <img class="tags__all--img" src="@/assets/img/close.png">
-        </a>
-        <div class="tag" v-for="tag in tags">
-            <a href="#!" class="tag__text"> {{ tag.categories }}</a>
-        </div>
+        <a href="#!" @click="isActivedFilter" 
+        :class="{'tags__all': true, 'active': !isActivedTagsFilter}">Все</a>
+        <a href="#!" v-for="tag in tags"
+        @click="isActivedFilter" 
+        :class="{'tag': true, 'active': isActivedTagsFilter}"> {{ tag.categories }}</a>
     </div>
 </div>
 </template>
